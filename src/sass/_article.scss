@@ -1,0 +1,8 @@
+.cinema__article {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-template-rows: 270px;
+  gap: 0 1rem;
+
+  padding: 4rem 0;
+}

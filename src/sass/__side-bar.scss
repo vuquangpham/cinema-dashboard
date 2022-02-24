@@ -1,0 +1,30 @@
+.cinema {
+  &__side-bar {
+    padding: 4.5rem 2.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  &__brand-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 6rem;
+    }
+    p {
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 3.2rem;
+      font-family: "Yanone Kaffeesatz", sans-serif;
+      letter-spacing: 5px;
+    }
+  }
+
+  &__settings {
+    margin-top: auto;
+  }
+}

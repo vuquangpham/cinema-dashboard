@@ -1,0 +1,126 @@
+.card {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(38, 149, 250, 0.9),
+    rgba(23, 90, 233, 0.9)
+  );
+
+  padding: 1.5rem;
+  border-radius: 20px;
+  overflow: hidden;
+
+  &__info {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    gap: 0 15px;
+    align-items: center;
+  }
+
+  &__img {
+    position: relative;
+    grid-row: 1 / span 2;
+
+    img {
+      width: 5rem;
+      height: 5rem;
+      object-fit: cover;
+      display: inline-block;
+      border-radius: 50%;
+    }
+
+    svg {
+      position: absolute;
+      right: -10%;
+      bottom: 10%;
+
+      width: 2rem;
+      background-color: #fff;
+      padding: 0.2rem;
+      border-radius: 50%;
+      border: 2.5px solid rgba(38, 149, 250, 0.9);
+
+      stroke: #000;
+    }
+  }
+
+  &__name {
+    font-size: 1.6rem;
+    color: #fff;
+    font-weight: 500;
+  }
+  &__phone {
+    font-size: 1.2rem;
+    color: #ced4da;
+    margin-top: -5px;
+  }
+
+  &__bundget {
+    display: grid;
+    grid-template-columns: min-content 1fr min-content;
+    align-items: center;
+    gap: 0px 10px;
+  }
+
+  &__credit {
+    grid-row: 1 / span 2;
+
+    width: 4rem;
+    padding: 0.4rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.24);
+
+    stroke: #f8f9fa;
+  }
+
+  &__balance {
+    &--price {
+      grid-row: 2 / span 1;
+      margin-top: -5px;
+
+      color: #fff;
+      font-size: 1.4rem;
+    }
+
+    &--text {
+      color: #ced4da;
+      font-size: 1rem;
+    }
+  }
+
+  &__deposit {
+    grid-row: 1 / span 2;
+
+    display: flex;
+
+    width: 4rem;
+    background-color: #fff;
+    border-radius: 18px;
+    padding: 1rem;
+
+    stroke: #212529;
+
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-3px) scale(1.1);
+    }
+
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+
+  &__seperate {
+    display: block;
+    background-color: #fff;
+    height: 1px;
+    background-image: linear-gradient(
+      90deg,
+      rgba(38, 149, 250, 0.9),
+      rgba(23, 90, 233, 0.9)
+    );
+
+    margin: 1.5rem 0;
+  }
+}

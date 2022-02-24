@@ -1,0 +1,47 @@
+.cinema__slider {
+  position: absolute;
+  bottom: 15%;
+  right: 5%;
+
+  display: flex;
+
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+  background-color: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  border-radius: 15px;
+
+  button {
+    border: none;
+    padding: 1rem 1.5rem;
+    display: flex;
+
+    background-color: transparent;
+    cursor: pointer;
+
+    &.active {
+      svg {
+        stroke: #fff;
+      }
+    }
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-image: linear-gradient(to right, #99acbb, #a2a3a3);
+    width: 0.2rem;
+    height: 80%;
+    opacity: 0.4;
+
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+.slider__icon {
+  width: 2rem;
+  stroke: #868e96;
+}

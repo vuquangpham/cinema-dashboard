@@ -1,0 +1,51 @@
+.btn {
+  border: none;
+  border-radius: 10px;
+
+  display: flex;
+  gap: 1rem;
+
+  cursor: pointer;
+  transition: transform 0.3s;
+
+  &--remind {
+    align-items: center;
+    padding: 0.5rem 1.2rem;
+    background-image: linear-gradient(
+      to right,
+      rgba(38, 149, 250, 0.9),
+      rgba(23, 90, 233, 0.9)
+    );
+  }
+
+  &:hover {
+    transform: translateY(-3px) scale(1.05);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
+
+  &__icon {
+    width: 3rem;
+    stroke: #fff;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  &--category {
+    color: #ccc;
+  }
+  &.active {
+    color: #fff;
+    background-image: linear-gradient(
+      to right,
+      rgba(38, 149, 250, 0.9),
+      rgba(23, 90, 233, 0.9)
+    );
+  }
+}
