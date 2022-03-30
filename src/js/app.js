@@ -1,2 +1,3 @@
 import "../sass/main.scss";
-console.log("ahissdssdssdsasaaasasahi");
+import { fetchData } from "../js/utility/helpers";
+fetchData();

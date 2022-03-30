@@ -20,7 +20,11 @@
   font-size: 1.4rem;
   font-family: inherit;
   background-color: transparent;
+  background-image: linear-gradient(to right, #231d30, #1a2031);
   color: #ced4da;
+
+  position: relative;
+  z-index: 2;
 
   &:focus {
     outline: none;
@@ -38,13 +42,14 @@ form {
   top: 50%;
   right: 1.5rem;
   transform: translateY(-50%);
+  z-index: 2;
 
   &::before {
     content: "";
     display: inline-block;
     position: absolute;
     width: 0.1rem;
-    background-color: #a1a2a3;
+    background-color: #b5b6b8;
     height: 100%;
     margin-left: -0.8rem;
   }
@@ -53,8 +58,12 @@ form {
 label[for="search"] {
   position: absolute;
   top: 50%;
-  left: 1.5rem;
   transform: translateY(-50%);
+  z-index: 2;
+}
+
+.search__input--search {
+  left: 1.5rem;
 }
 
 .header__box {
@@ -100,4 +109,40 @@ label[for="search"] {
   border-radius: 50%;
   top: 20%;
   right: 25%;
+}
+
+.search__suggest {
+  position: absolute;
+  background-color: #ced4da;
+  width: 100%;
+  padding: 3.5rem 5rem 1.5rem;
+  list-style-type: none;
+  z-index: 1;
+  top: 50%;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+
+  visibility: hidden;
+  opacity: 0;
+}
+
+.search__item {
+  font-size: 1.4rem;
+  padding: 0.5rem 0;
+  display: block;
+  position: relative;
+  cursor: pointer;
+
+  &--suggest {
+    left: -5%;
+
+    svg {
+      stroke: #22252e;
+      width: 2rem;
+    }
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 }
