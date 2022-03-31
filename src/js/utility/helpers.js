@@ -1,4 +1,5 @@
 import axios from "axios";
+import { URL } from "./config";
 
 export const debounce = function (func, delay) {
   let timeoutId;
@@ -10,12 +11,16 @@ export const debounce = function (func, delay) {
   };
 };
 
-export const fetchData = async function (data) {
-  const response = await axios.get("https://www.omdbapi.com/", {
+export const fetchData = async function (urlParams) {
+  const response = await axios.get(URL, {
     params: {
       apikey: "6261b9cd",
-      s: "captain",
+      ...urlParams,
     },
   });
-  console.log(response.data);
+
+  if (response.data.Error) {
+    throw new Error("Can't find that movie, try again!");
+  }
+  return response.data;
 };

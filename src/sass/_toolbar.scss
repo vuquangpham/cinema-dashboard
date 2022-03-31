@@ -124,17 +124,26 @@ label[for="search"] {
 
   visibility: hidden;
   opacity: 0;
+
+  transition: opacity 0.3s;
+}
+
+.search__suggest.active {
+  visibility: visible;
+  opacity: 1;
 }
 
 .search__item {
   font-size: 1.4rem;
   padding: 0.5rem 0;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   position: relative;
   cursor: pointer;
 
   &--suggest {
-    left: -5%;
+    left: -6%;
 
     svg {
       stroke: #22252e;
@@ -145,4 +154,10 @@ label[for="search"] {
   &:hover {
     background-color: rgba(0, 0, 0, 0.1);
   }
+}
+.search__suggest-img {
+  width: 3.5rem;
+  height: auto;
+  display: inline-block;
+  object-fit: cover;
 }
