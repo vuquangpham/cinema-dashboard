@@ -76,6 +76,7 @@ label[for="search"] {
   padding: 1rem;
 
   cursor: pointer;
+  position: relative;
 
   span {
     color: #ddd;
@@ -97,6 +98,48 @@ label[for="search"] {
 
   &--fill {
     fill: #ddd;
+  }
+}
+
+.header__box:hover .bookmark,
+.bookmark:hover {
+  opacity: 1;
+  visibility: visible;
+}
+
+.bookmark {
+  width: 25rem;
+
+  padding: 1rem 0.5rem;
+  position: absolute;
+  background-color: #fff;
+  top: 100%;
+  right: 0;
+
+  opacity: 0;
+  visibility: hidden;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  z-index: 5;
+
+  &__item {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    img {
+      width: 3.5rem;
+      height: auto;
+      display: inline-block;
+      object-fit: cover;
+    }
+
+    span {
+      color: #1a2031;
+    }
   }
 }
 

@@ -5,6 +5,7 @@ import PopularMovies from "./View/PopularMovies.js";
 import InputSearch from "./View/InputSearch.js";
 import SuggestItem from "./View/SuggestItem.js";
 import { debounce } from "./utility/helpers.js";
+import Bookmarks from "./View/Bookmarks.js";
 
 const controlPopularMovies = async function () {
   try {
@@ -22,7 +23,6 @@ const controlSearchSuggest = async function () {
     const searchQuery = InputSearch.getQuery();
 
     if (!searchQuery) {
-      model.state.suggestMovies = [];
       SuggestItem.hideSuggest();
       return;
     }
@@ -33,12 +33,30 @@ const controlSearchSuggest = async function () {
     SuggestItem.showSuggest();
   } catch (error) {
     new Toast("error", error.message);
+    SuggestItem.hideSuggest();
   }
+};
+
+const controlBookmark = function () {
+  Bookmarks.render(model.state.bookmarks);
+};
+
+const controlAddToBookmark = (id) => {
+  model.addToBookmark(id);
+  Bookmarks.render(model.state.bookmarks);
+};
+
+const controlRemoveBookMark = (id) => {
+  model.removeBookmarks(id);
+  Bookmarks.render(model.state.bookmarks);
 };
 
 const init = function () {
   controlPopularMovies();
   InputSearch.handleInputChange(debounce(controlSearchSuggest, 400));
+  PopularMovies.handleAddToBookmark(controlAddToBookmark);
+  Bookmarks.handleRender(controlBookmark);
+  Bookmarks.handleRemoveBookmark(controlRemoveBookMark);
 };
 
 init();

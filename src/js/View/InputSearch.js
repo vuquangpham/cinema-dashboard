@@ -1,5 +1,6 @@
 class InputSearch {
   _parentElm = document.querySelector(".search__input");
+  _errorMessage = "Failed to load suggest movies. Please try again!!!";
 
   _onInput(e) {
     const searchData = encodeURI(e.target.value.trim());

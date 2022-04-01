@@ -4,6 +4,7 @@ export const state = {
   popularMovies: [],
   searchQuery: "",
   suggestMovies: [],
+  bookmarks: [],
 };
 
 export const loadPopularMovies = async function (query) {
@@ -21,7 +22,38 @@ export const loadPopularMovies = async function (query) {
 };
 
 export const loadSuggestMovies = async function (query) {
+  state.suggestMovies = [];
   const res = await fetchData({ s: query });
   const searchItems = res.Search;
   state.suggestMovies = searchItems;
 };
+
+export const addToBookmark = function (id) {
+  const { Title, Poster } = state.popularMovies[id];
+  state.bookmarks.push({
+    Title,
+    Poster,
+  });
+  updateBookmark();
+};
+
+const updateBookmark = function () {
+  localStorage.setItem("bookmarks", JSON.stringify(state.bookmarks));
+};
+
+export const loadBookmarks = function () {
+  state.bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
+  console.log(state.bookmarks);
+};
+
+export const removeBookmarks = function (id) {
+  state.bookmarks.splice(id, 1);
+  updateBookmark();
+  console.log(state.bookmarks);
+};
+
+const init = () => {
+  loadBookmarks();
+};
+
+init();

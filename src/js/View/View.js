@@ -12,7 +12,7 @@ export default class View {
 
     if (!render) return markup;
 
-    console.log(this._parentElm);
+    this._clear();
 
     this._parentElm.insertAdjacentHTML("beforeend", markup);
   }
@@ -37,10 +37,10 @@ export default class View {
   }
 
   _renderError() {
-    Toast.createToastMessage("error", this._errorMessage);
+    new Toast("error", this._errorMessage);
   }
 
   _renderSuccess() {
-    Toast.createToastMessage("success", this._successMessage);
+    new Toast("success", this._successMessage);
   }
 }
