@@ -13,6 +13,15 @@ class PopularMovies extends View {
     });
   }
 
+  handleShowDetail(handler) {
+    this._parentElm.addEventListener("click", function (e) {
+      const btnAddBookmark = e.target.closest(".btn__movie--detail");
+      if (!btnAddBookmark) return;
+      const id = +btnAddBookmark.parentElement.parentElement.dataset.id;
+      handler(id);
+    });
+  }
+
   _generateMarkup() {
     return this._data
       .map(

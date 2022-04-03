@@ -4,9 +4,11 @@ export default class View {
   _data;
   _successMessage = "Task has completely done. Please check it!!!";
 
-  render(data, render = true) {
-    if (!data || (Array.isArray(data) && data.length === 0))
+  render(data, render = true, renderError = true) {
+    if ((!data || (Array.isArray(data) && data.length === 0)) && renderError)
       return this._renderError();
+    if ((!data || (Array.isArray(data) && data.length === 0)) && !renderError)
+      return this._renderMessageError();
     this._data = data;
     const markup = this._generateMarkup();
 
@@ -33,6 +35,7 @@ export default class View {
       </svg>
     </div>
     `;
+    this._clear();
     this._parentElm.insertAdjacentHTML("beforeend", markup);
   }
 
@@ -42,5 +45,23 @@ export default class View {
 
   _renderSuccess() {
     new Toast("success", this._successMessage);
+  }
+
+  _renderMessageError() {
+    const markup = `
+    <div class="error">
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            class="toast__icon" 
+            viewBox="0 0 20 20" 
+            fill="currentColor"
+          >
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+        <p>${this._errorMessage}</p>
+      </div>
+    `;
+    this._clear();
+    this._parentElm.insertAdjacentHTML("beforeend", markup);
   }
 }

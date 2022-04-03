@@ -2,7 +2,8 @@ import View from "./View";
 
 class Bookmarks extends View {
   _parentElm = document.querySelector(".bookmark");
-  _errorMessage = "Failed to load bookmarks. Please try again!!!";
+  _errorMessage =
+    "You haven't bookmarked yet! If you like some movies, bookmark it !!!";
 
   handleRender(handler) {
     window.addEventListener("load", handler);

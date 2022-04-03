@@ -11,11 +11,20 @@ class SuggestItem extends View {
     this._parentElm.classList.add("active");
   }
 
+  handleShowSuggestMovie(handler) {
+    this._parentElm.addEventListener("click", function (e) {
+      const movie = e.target.closest(".search__item");
+      if (!movie) return;
+      const id = +movie.dataset.id;
+      handler(id);
+    });
+  }
+
   _generateMarkup() {
     return this._data
       .map(
-        (d) => `
-    <li class="search__item ">
+        (d, idx) => `
+    <li class="search__item" data-id="${idx}">
       <label for="search" class="search__item--suggest">
         <svg
           xmlns="http://www.w3.org/2000/svg"

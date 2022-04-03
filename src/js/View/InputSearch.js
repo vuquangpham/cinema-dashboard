@@ -13,5 +13,13 @@ class InputSearch {
   handleInputChange(handler) {
     this._parentElm.addEventListener("input", handler);
   }
+
+  handleInFocus(handler) {
+    this._parentElm.addEventListener("focusin", handler);
+  }
+
+  handleOutFocus(handler) {
+    this._parentElm.addEventListener("focusout", handler);
+  }
 }
 export default new InputSearch();
