@@ -16,20 +16,20 @@ I'm just coverd UI design on Dribble into HTML/CSS. So, I'm just do a little bit
 
 ### API Endpoint
 
-- I have used API from [omdbapi](https://www.omdbapi.com/). You have to generate an API key to use this API. I have updated my API key into my respository without env variable, so you can use my API key to generate movie.
+- I have used API from [omdbapi](https://www.omdbapi.com/). You have to generate an API key to use this API. I have updated my API key into my respository without env variable, so you can use my API key to generate movie
 
 ### Pattern
 
-Coding with pattern, it helps me a lot, especially in structuring file/folder, managing and expanding my code in the nearly future.
+Coding with pattern, it helps me a lot, especially in structuring file/folder, managing and expanding my code in the nearly future
 
 I have used 2 popular pattern:
 
-- MVC (model - view - controller) Pattern to structure Javascript code.
-- 7 - 1 Architecture CSS.
+- MVC (model - view - controller) Pattern to structure Javascript code
+- 7 - 1 Architecture CSS
 
 ### Module Bundler
 
-- Webpack is my choice 😍.
+- Webpack is my choice 😍
 - You can use another module bundler:
   - Parcel (easy for newbie without config)
   - Browserify
@@ -39,8 +39,8 @@ I have used 2 popular pattern:
 In my mine, I think the most difficult thing when I start to code, maybe in coding time, is how to naming variable, naming classname to have significant meaning. So in my project, I have to use 2 naming convention:
 
 - For HTML/CSS, I have used BEM - Block Element Modified for classname
-- For Javascript code, camelCase is my best choice.
+- For Javascript code, camelCase is my best choice
 
 ### Important Notes:
 
-I haven't used CSS prefix for my project until now. Because I have more thing to do than do it. So if you want this project to run in any environment, please go to **NPM**, download and config to use it. I think it's very easy for you to do it. Thank you for my inconvenience 😥.
+I haven't used CSS prefix for my project until now. Because I have more thing to do than do it. So if you want this project to run in any environment, please go to **NPM**, download and config to use it. I think it's very easy for you to do it. Thank you for my inconvenience 😥
