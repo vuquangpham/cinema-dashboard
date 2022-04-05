@@ -1,5 +1,7 @@
 ## Cineme Dashboard
 
+Try on: [cinema-dashboard](https://vuquangpham.github.io/cinema-dashboard)
+
 Helloooo there, welcome to my respository - **cinema dashboard**. I have built this project for my self learning - about HTML/CSS/Javascript/Module Bundler and more pattern on it. In this project, what are things that we can do? Yeah, I have super super notes below that, please read it before you use this project 😂. Hope you have fun when travel throught my project
 
 ### What can we do here?
@@ -12,7 +14,7 @@ Helloooo there, welcome to my respository - **cinema dashboard**. I have built t
 
 I'm just coverd UI design on Dribble into HTML/CSS. So, I'm just do a little bit. If you like this design, please contact this owner on Dribble.
 
-- UI Design: [Dribble]('https://dribbble.com/shots/15401391-Cinema-Dashboard-Design/attachments/7166749?mode=media')
+- UI Design: [Dribble](https://dribbble.com/shots/15401391-Cinema-Dashboard-Design/attachments/7166749?mode=media)
 
 ### API Endpoint
 
