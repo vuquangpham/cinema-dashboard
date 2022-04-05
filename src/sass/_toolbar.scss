@@ -1,6 +1,22 @@
 .cinema__toolbar {
   display: flex;
   gap: 2rem;
+
+  @media screen and (max-width: 35.625em) {
+    display: grid;
+    grid-template-columns: 1fr 1fr min-content min-content;
+
+    form {
+      grid-column: 1 / span 4;
+    }
+
+    form ~ div {
+    }
+
+    form + div {
+      grid-column: 1 / span 2;
+    }
+  }
 }
 
 .header__box {

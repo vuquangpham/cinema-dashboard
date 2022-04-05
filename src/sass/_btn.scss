@@ -16,6 +16,11 @@
       rgba(38, 149, 250, 0.9),
       rgba(23, 90, 233, 0.9)
     );
+
+    @media screen and (max-width: 33.125em) {
+      padding: 0.5rem;
+      font-size: 1.4rem;
+    }
   }
 
   &:hover {

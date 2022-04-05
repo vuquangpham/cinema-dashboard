@@ -1,5 +1,5 @@
 .detail__overlay {
-  position: absolute;
+  position: fixed;
 
   width: 100%;
   height: 100%;
@@ -26,6 +26,7 @@
 
   display: grid;
   grid-template-columns: min-content 1fr;
+  align-items: center;
   grid-gap: 0 3rem;
 
   background-color: rgba(255, 255, 255, 0.5);
@@ -36,20 +37,36 @@
   width: 114rem;
   max-width: 80%;
   padding: 5rem 2rem;
+  overflow: hidden;
 
   font-size: 2rem;
   color: #212529;
   font-weight: 500;
 
+  @media screen and (max-width: 28.125em) {
+    font-size: 1.4rem;
+  }
+
   &__img {
     img {
-      max-width: 40vh;
-      height: 40vh;
+      max-width: 25rem;
+      height: 40rem;
 
       display: inline-block;
       object-fit: cover;
 
       border-radius: 15px;
+      overflow: hidden;
+
+      @media screen and (max-width: 43.75em) {
+        width: 20rem;
+        height: 30rem;
+      }
+
+      @media screen and (max-width: 28.125em) {
+        width: 12rem;
+        height: 22rem;
+      }
     }
 
     animation: imgSlideInLeft 0.3s ease-in;
@@ -59,6 +76,14 @@
     font-weight: 600;
     font-size: 3.8rem;
     text-transform: uppercase;
+
+    @media screen and (max-width: 43.75em) {
+      font-size: 3rem;
+    }
+
+    @media screen and (max-width: 28.125em) {
+      font-size: 2rem;
+    }
   }
 
   &__lan {

@@ -43,15 +43,23 @@
   border-radius: 20px;
   padding: 2rem 2.5rem;
 
+  @media screen and (max-width: 33.125em) {
+    padding: 1rem;
+  }
+
   &__notify {
     display: grid;
-    grid-template-columns: 150px max-content;
+    grid-template-columns: 15rem max-content;
     gap: 1rem;
 
     & > span {
       font-size: 1.6rem;
       color: #fff;
       font-weight: 600;
+
+      @media screen and (max-width: 33.125em) {
+        font-size: 1.4rem;
+      }
     }
   }
 
@@ -82,6 +90,11 @@
     font-size: 1.8rem;
     font-weight: 600;
     color: #fff;
+
+    @media screen and (max-width: 33.125em) {
+      padding: 1rem;
+      font-size: 1.6rem;
+    }
 
     position: relative;
     z-index: 2;
@@ -128,5 +141,9 @@
     color: #fff;
     font-weight: 400;
     font-size: 1.4rem;
+
+    @media screen and (max-width: 33.125em) {
+      font-size: 1.2rem;
+    }
   }
 }

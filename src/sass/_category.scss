@@ -20,6 +20,13 @@
   gap: 1rem;
 
   margin-top: 1rem;
+
+  @media screen and (max-width: 59.375em) {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5rem;
+  }
 }
 .btn--category {
   padding: 1.5rem 2rem;

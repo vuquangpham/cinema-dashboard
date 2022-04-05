@@ -7,9 +7,11 @@ import SuggestItem from "./View/SuggestItem.js";
 import { debounce } from "./utility/helpers.js";
 import Bookmarks from "./View/Bookmarks.js";
 import DetailMovie from "./View/DetailMovie.js";
+import ExpandButton from "./View/ExpandButton.js";
 
 const controlPopularMovies = async function () {
   try {
+    PopularMovies._renderSpinner();
     // fetching movies from API
     await model.loadPopularMovies("captain");
     // render movies
@@ -30,7 +32,7 @@ const controlSearchSuggest = async function () {
     SuggestItem._renderSpinner();
     await model.loadSuggestMovies(searchQuery);
 
-    // SuggestItem.render(model.state.suggestMovies, true);
+    SuggestItem.render(model.state.suggestMovies, true);
     SuggestItem.showSuggest();
   } catch (error) {
     new Toast("error", error.message);
@@ -65,15 +67,15 @@ const controlShowDetailMovie = (id) => {
   DetailMovie.render(model.state.popularMovies[id]);
 };
 
-const controlShowDetailSuggestMovie = async (id) => {
-  const { imdbID } = model.state.suggestMovies[id];
+const controlShowDetailSuggestMovie = async (idx) => {
+  const { id } = model.state.suggestMovies[idx];
   DetailMovie.showSpinner();
-  await model.getDetailMovie(imdbID);
+  await model.getDetailMovie(id);
   DetailMovie.render(model.state.detailMovie);
 };
 
 const init = function () {
-  controlPopularMovies();
+  PopularMovies.handlePageLoad(controlPopularMovies);
   InputSearch.handleInputChange(debounce(controlSearchSuggest, 400));
   PopularMovies.handleAddToBookmark(controlAddToBookmark);
   PopularMovies.handleShowDetail(controlShowDetailMovie);
@@ -82,12 +84,13 @@ const init = function () {
   Bookmarks.handleRemoveBookmark(controlRemoveBookMark);
 
   InputSearch.handleInFocus(controlSuggestFocus);
-  // BUG
+  // // BUG
   // InputSearch.handleOutFocus(controlSuggestFocusOut);
 
   SuggestItem.handleShowSuggestMovie(controlShowDetailSuggestMovie);
 
   DetailMovie.handleCloseDetailMovie();
+  ExpandButton.handleExpandTab();
 };
 
 init();

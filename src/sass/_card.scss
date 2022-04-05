@@ -1,3 +1,80 @@
+.cinema__navigation {
+  .stroke {
+    display: none;
+  }
+
+  @media screen and (max-width: 45.625em) {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: #ced4da;
+    cursor: pointer;
+
+    transition: all 0.3s;
+    z-index: 5;
+
+    .stroke {
+      top: 50%;
+    }
+
+    &:hover {
+      transform: translateY(-4px) scale(1.05);
+    }
+
+    &:active {
+      transform: translateY(-2px) scale(1.05);
+    }
+
+    &::before,
+    &::after,
+    .stroke {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 65%;
+      height: 2px;
+
+      left: 50%;
+      transform: translateX(-50%);
+
+      background-color: #212529;
+    }
+
+    &::before {
+      top: 35%;
+    }
+
+    &::after {
+      top: 65%;
+    }
+
+    & .nav__list {
+      position: absolute;
+      top: 100%;
+      right: 100%;
+
+      width: 20rem;
+      border-radius: 10px;
+      box-shadow: 0 0.5rem 4rem 0 rgba(0, 0, 0, 0.2);
+
+      visibility: hidden;
+      opacity: 0;
+
+      transition: opacity 0.3s;
+      z-index: 3;
+    }
+
+    &.active .nav__list {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
 .card {
   background-image: linear-gradient(
     to right bottom,
@@ -9,10 +86,13 @@
   border-radius: 20px;
   overflow: hidden;
 
+  @media screen and (max-width: 45.625em) {
+  }
+
   &__info {
     display: grid;
     grid-template-columns: min-content 1fr;
-    gap: 0 15px;
+    gap: 0 1.5rem;
     align-items: center;
   }
 
@@ -26,6 +106,11 @@
       object-fit: cover;
       display: inline-block;
       border-radius: 50%;
+
+      @media screen and (max-width: 28.75em) {
+        width: 4rem;
+        height: 4rem;
+      }
     }
 
     svg {
@@ -47,6 +132,10 @@
     font-size: 1.6rem;
     color: #fff;
     font-weight: 500;
+
+    @media screen and (max-width: 28.75em) {
+      font-size: 1.4rem;
+    }
   }
   &__phone {
     font-size: 1.2rem;
@@ -58,7 +147,7 @@
     display: grid;
     grid-template-columns: min-content 1fr min-content;
     align-items: center;
-    gap: 0px 10px;
+    gap: 0px 1rem;
   }
 
   &__credit {

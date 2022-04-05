@@ -2,6 +2,10 @@
   padding: 4.5rem 5.5rem;
   position: relative;
 
+  @media screen and (max-width: 28.75em) {
+    padding: 1rem 1.5rem;
+  }
+
   &::before {
     content: "";
     display: inline-block;

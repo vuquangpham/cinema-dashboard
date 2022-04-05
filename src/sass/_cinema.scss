@@ -1,7 +1,13 @@
 .cinema {
   max-width: 144rem;
   margin: 5rem auto;
-  min-height: 90rem;
+
+  @media screen and (max-width: 73.125em) {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  min-height: 100vh;
   border-radius: 40px;
 
   overflow: hidden;
@@ -15,4 +21,8 @@
 
   display: grid;
   grid-template-columns: 1fr 4fr;
+
+  @media screen and (max-width: 45.625em) {
+    grid-template-columns: 1fr;
+  }
 }

@@ -9,11 +9,9 @@
 html {
   font-size: 62.5%;
 
-  @media screen and (max-width: 78em) {
+  @media screen and (max-width: 73.125em) {
     font-size: 50%;
   }
-
-  position: relative;
 }
 
 body {

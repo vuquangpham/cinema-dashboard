@@ -18,28 +18,76 @@ export const loadPopularMovies = async function (query) {
     .map((id) => getJSON({ i: id }));
 
   const responseList = await Promise.all(idMoviesList);
-  const popularMovies = responseList.map((d) => d.data);
+  const popularMovies = responseList
+    .map((d) => d.data)
+    .map((movie) => {
+      const {
+        Poster: image,
+        Title: title,
+        imdbRating: rate,
+        Language: lang,
+        Released: released,
+        Runtime: fulltime,
+        Actors: actor,
+      } = movie;
+
+      return {
+        image,
+        title,
+        rate,
+        lang,
+        released,
+        fulltime,
+        actor,
+      };
+    });
   state.popularMovies = popularMovies;
 };
 
 export const loadSuggestMovies = async function (query) {
   state.suggestMovies = [];
   const res = await fetchData({ s: query });
-  const searchItems = res.Search;
+  const searchItems = res.Search.map((movie) => {
+    const { Poster: image, Title: title, imdbRating: rate, imdbID: id } = movie;
+
+    return {
+      image,
+      title,
+      rate,
+      id,
+    };
+  });
   state.suggestMovies = searchItems;
 };
 
 export const getDetailMovie = async function (id) {
   const res = await getJSON({ i: id });
-  const data = res.data;
-  state.detailMovie = data;
+  const {
+    Poster: image,
+    Title: title,
+    imdbRating: rate,
+    Language: lang,
+    Released: released,
+    Runtime: fulltime,
+    Actors: actor,
+  } = res.data;
+
+  state.detailMovie = {
+    image,
+    title,
+    rate,
+    lang,
+    released,
+    fulltime,
+    actor,
+  };
 };
 
 export const addToBookmark = function (id) {
-  const { Title, Poster } = state.popularMovies[id];
+  const { title, image } = state.popularMovies[id];
   state.bookmarks.push({
-    Title,
-    Poster,
+    title,
+    image,
   });
   updateBookmark();
 };

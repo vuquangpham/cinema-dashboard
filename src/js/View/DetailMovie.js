@@ -36,20 +36,19 @@ class DetailMovie extends View {
   }
 
   _generateMarkup() {
-    console.log(this._data);
     return `
     <div class="detail__overlay"></div>
     <div class="detail-movie">
       <div class="detail-movie__img">
         <img
-          src="${this._data.Poster}"
-          alt="Detail movie${this._data.Title}">
+          src="${this._data.image}"
+          alt="Detail movie${this._data.title}">
       </div>
       <div class="detail-movie__details">
-        <h1 class="detail-movie__title">${this._data.Title}</h1>
-        <p class="detail-movie__lan">Language: <span>${this._data.Language}</span></p>
+        <h1 class="detail-movie__title">${this._data.title}</h1>
+        <p class="detail-movie__lan">Language: <span>${this._data.lang}</span></p>
         <p class="detail-movie__released">
-          Released: <span>${this._data.Released}</span>
+          Released: <span>${this._data.released}</span>
         </p>
         <span class="movie__star">
           <span>Rated: </span>
@@ -63,11 +62,11 @@ class DetailMovie extends View {
               d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
             />
           </svg>
-          <span class="movie__count-star">${this._data.imdbRating} / 10</span>
+          <span class="movie__count-star">${this._data.rate} / 10</span>
         </span>
-        <p class="detail-movie__fulltime">Runtime: <span>${this._data.Runtime}</span></p>
+        <p class="detail-movie__fulltime">Runtime: <span>${this._data.fulltime}</span></p>
         <p class="detail-movie__actors">
-          Actors: <span>${this._data.Actors}</span>
+          Actors: <span>${this._data.actor}</span>
         </p>
       </div>
       <div class="detail-movie__close">

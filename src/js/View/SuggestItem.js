@@ -41,8 +41,8 @@ class SuggestItem extends View {
           />
         </svg>
       </label> 
-      <img src="${d.Poster}" alt="${d.Title}" class="search__suggest-img">
-      <span>${d.Title}</span></li>`
+      <img src="${d.image}" alt="${d.title}" class="search__suggest-img">
+      <span>${d.title}</span></li>`
       )
       .join("");
   }
