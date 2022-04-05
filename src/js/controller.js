@@ -45,13 +45,19 @@ const controlBookmark = function () {
 };
 
 const controlAddToBookmark = (id) => {
-  model.addToBookmark(id);
-  Bookmarks.render(model.state.bookmarks, true, false);
+  try {
+    model.addToBookmark(id);
+    Bookmarks.render(model.state.bookmarks, true, false);
+    new Toast("success", "Bookmarked added successfully !!!");
+  } catch (error) {
+    new Toast("error", error.message);
+  }
 };
 
 const controlRemoveBookMark = (id) => {
   model.removeBookmarks(id);
   Bookmarks.render(model.state.bookmarks, true, false);
+  new Toast("success", "Bookmarked removed successfully !!!");
 };
 
 const controlSuggestFocus = () => {

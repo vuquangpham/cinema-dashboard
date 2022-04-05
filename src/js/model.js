@@ -29,6 +29,7 @@ export const loadPopularMovies = async function (query) {
         Released: released,
         Runtime: fulltime,
         Actors: actor,
+        imdbID: id,
       } = movie;
 
       return {
@@ -39,6 +40,7 @@ export const loadPopularMovies = async function (query) {
         released,
         fulltime,
         actor,
+        id,
       };
     });
   state.popularMovies = popularMovies;
@@ -83,11 +85,17 @@ export const getDetailMovie = async function (id) {
   };
 };
 
-export const addToBookmark = function (id) {
-  const { title, image } = state.popularMovies[id];
+export const addToBookmark = function (idx) {
+  const { title, image, id } = state.popularMovies[idx];
+
+  const isBookmarked = state.bookmarks.some((m) => m.id === id);
+
+  if (isBookmarked) throw new Error("You have already bookmarked !!!");
+
   state.bookmarks.push({
     title,
     image,
+    id,
   });
   updateBookmark();
 };

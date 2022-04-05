@@ -23,8 +23,8 @@ class Bookmarks extends View {
       .map(
         (movie, idx) => `
       <li class="bookmark__item" data-id="${idx}">
-        <img src="${movie.Poster}" alt="${movie.Title}" class="bookmark__img">
-        <span>${movie.Title}</span>
+        <img src="${movie.image}" alt="${movie.title}" class="bookmark__img">
+        <span>${movie.title}</span>
       </li>
     `
       )
