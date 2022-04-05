@@ -36,7 +36,7 @@ I have used 2 popular pattern:
 
 ### Naming Convention
 
-In my mine, I think the most difficult thing when I start to code, maybe in coding time, is how to naming variable, naming classname to have significant meaning. So in my project, I have to use 2 naming convention:
+In my mine, I think the most difficult thing when I start to code, maybe in coding time, is how to name variable, name classname to have significant meaning. So in my project, I have to use 2 naming convention:
 
 - For HTML/CSS, I have used BEM - Block Element Modified for classname
 - For Javascript code, camelCase is my best choice
